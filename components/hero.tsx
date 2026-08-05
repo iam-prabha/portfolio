@@ -17,7 +17,7 @@ export function Hero() {
           </div>
           <div className="flex">
             <BlurFade delay={0.04} yOffset={8} className="inline-block">
-              <p className="max-w-[600px] text-muted-foreground md:text-lg lg:text-xl">
+              <p className="max-w-150 text-muted-foreground md:text-lg lg:text-xl">
                 <Typewriter words={personalInfo.headlines} />
               </p>
             </BlurFade>

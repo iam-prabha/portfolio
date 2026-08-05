@@ -7,6 +7,7 @@ export const personalInfo = {
   phone: "+91 63807 03724",
   email: "vel.prabhakaran.ds@gmail.com",
   github: "https://github.com/iam-prabha",
+  githubUsername: "iam-prabha",
   linkedin: "https://linkedin.com/in/iamprabha",
   x: "https://x.com/iamprabha0",
   xFollow: "https://x.com/intent/follow?screen_name=iamprabha0",
