@@ -41,6 +41,18 @@ export const skills = {
 
 export const projects = [
   {
+    title: "Diary",
+    subtitle: "Your Private Journal app",
+    description:
+      "Developed a full-stack journaling application with rich text editing via TipTap and cloud media uploads.",
+    dates: "Project",
+    tech: ["TypeScript", "React", "Express", "Prisma" ],
+    links: {
+      github: "https://github.com/iam-prabha/diary",
+      demo: "https://diary-client-two.vercel.app",
+    },
+  },
+  {
     title: "HireFlow AI",
     subtitle: "Multi-Stage AI Recruitment Agent",
     description:
@@ -61,7 +73,7 @@ export const projects = [
     tech: ["Python", "LangChain", "Gemini API"],
     links: {
       github: "https://github.com/iam-prabha/research-agent",
-      demo: "https://research-agent-1-onrender.com",
+      demo: "https://research-agent-1-dcsj.onrender.com/",
     },
   },
   {
