@@ -19,6 +19,13 @@ const brandIconMap: Record<string, string> = {
   Pinecone: "/devicons/pinecone.svg",
 };
 
+const darkMonochromeIcons = new Set([
+  "Pinecone",
+  "Express",
+  "Vercel",
+  "Next.js",
+]);
+
 const fallbackIcons = {
   RAG: Database,
   "AI Agents": Bot,
@@ -34,7 +41,7 @@ export function SkillIcon({ name }: { name: string }) {
         alt={name}
         width={16}
         height={16}
-        className="size-4 shrink-0 object-contain"
+        className={`size-4 shrink-0 object-contain ${darkMonochromeIcons.has(name) ? "dark:invert" : ""}`}
       />
     );
   }

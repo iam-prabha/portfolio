@@ -1,7 +1,11 @@
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { BlurFade } from "@/components/blur-fade";
 import { GitHubIcon } from "@/components/icons";
 import { projects } from "@/lib/data";
+
+function slugify(title: string) {
+  return title.toLowerCase().replace(/\s+/g, "-");
+}
 
 export function Projects() {
   return (
@@ -33,75 +37,83 @@ export function Projects() {
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-200 mx-auto auto-rows-fr w-full">
         {projects.map((project, index) => (
           <BlurFade key={project.title} delay={0.48 + index * 0.05}>
-            <article className="flex h-full flex-col overflow-hidden rounded-xl border border-border transition-all duration-200 hover:ring-2 hover:ring-muted">
-              <div className="relative h-48 w-full">
-                {/* Thumbnail placeholder — replace with a real screenshot/video.
-                    To use a looping video like the reference, drop a file in /public
-                    (e.g. public/chat-collect.mp4) and swap this block for:
-
-                    <video
-                      src="/chat-collect.mp4"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="h-48 w-full object-cover"
-                    />
-                */}
-                <div
-                  aria-hidden="true"
-                  className="flex h-48 w-full items-center justify-center bg-linear-to-br from-muted to-secondary/40"
-                >
-                  <span className="font-sans text-sm font-semibold text-muted-foreground">
-                    {project.title}
-                  </span>
+            <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-all duration-200 hover:-translate-y-0.5 hover:ring-2 hover:ring-muted">
+              <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/40 px-4 py-2">
+                <div className="flex items-center gap-1.5">
+                  <span
+                    aria-hidden="true"
+                    className="size-2.5 rounded-full border border-border bg-foreground/20 transition-colors duration-200 group-hover:bg-foreground/40"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="size-2.5 rounded-full border border-border bg-foreground/20 transition-colors duration-200 group-hover:bg-foreground/40"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="size-2.5 rounded-full border border-border bg-foreground/20 transition-colors duration-200 group-hover:bg-foreground/40"
+                  />
                 </div>
-                <div className="absolute top-2 right-2 flex flex-wrap gap-2">
-                  <a
-                    href={project.links.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 rounded-md border border-transparent bg-black px-2.5 py-0.5 text-xs font-semibold text-white shadow transition-colors hover:bg-black/90"
-                  >
-                    <ExternalLink className="size-3" />
-                    Website
-                  </a>
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 rounded-md border border-transparent bg-black px-2.5 py-0.5 text-xs font-semibold text-white shadow transition-colors hover:bg-black/90"
-                  >
-                    <GitHubIcon className="size-3" />
-                    Source
-                  </a>
-                </div>
+                <span className="truncate font-mono text-[11px] text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
+                  ~/projects/{slugify(project.title)}
+                </span>
               </div>
 
-              <div className="flex flex-1 flex-col gap-3 p-6">
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="font-semibold">
-                    <span className="inline-flex items-center gap-1">
-                      {project.title}
-                      <ArrowUpRight className="size-4 text-muted-foreground transition-colors hover:text-foreground" />
-                    </span>
-                  </h3>
-                  <time className="text-xs text-muted-foreground">
-                    {project.subtitle}
-                  </time>
-                </div>
-                <div className="text-xs text-muted-foreground leading-relaxed">
+              <div className="relative flex h-36 flex-col items-center justify-center gap-1 overflow-hidden bg-linear-to-br from-muted to-secondary/40 px-6 text-center">
+                <span
+                  aria-hidden="true"
+                  className="absolute -top-4 -right-2 font-mono text-7xl font-bold tracking-tight text-foreground/5 transition-all duration-200 select-none group-hover:text-foreground/15 group-hover:scale-110"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="flex items-center gap-1 text-2xl font-semibold tracking-tight">
+                  {project.title}
+                  <ArrowUpRight className="size-5 -translate-x-2 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  {project.subtitle}
+                </p>
+              </div>
+
+              <div className="flex flex-1 flex-col gap-3 p-5">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {project.description}
-                </div>
-                <div className="mt-auto flex flex-wrap gap-1">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="inline-flex h-6 w-fit items-center rounded-md border border-border px-2 py-0.5 text-[11px] font-medium text-foreground"
+                </p>
+                <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-1">
+                  <div className="flex flex-wrap gap-1">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="inline-flex h-6 w-fit items-center rounded-md border border-border bg-background px-2 py-0.5 text-[11px] font-medium text-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={project.links.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <span
+                        aria-hidden="true"
+                        className="size-1.5 rounded-full bg-emerald-500"
+                      />
+                      Live
+                      <ArrowUpRight className="size-3 text-muted-foreground transition-colors hover:text-foreground" />
+                    </a>
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                    >
+                      <GitHubIcon className="size-3" />
+                      Source
+                      <ArrowUpRight className="size-3" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </article>
