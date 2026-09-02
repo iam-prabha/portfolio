@@ -46,14 +46,14 @@ export const projects = [
     description:
       "Developed a full-stack journaling application with rich text editing via TipTap and cloud media uploads.",
     dates: "Project",
-    tech: ["TypeScript", "React", "Express", "Prisma" ],
+    tech: ["TypeScript", "React", "Express", "Prisma"],
     links: {
       github: "https://github.com/iam-prabha/diary",
       demo: "https://diary-client-two.vercel.app",
     },
   },
   {
-    title: "HireFlow AI",
+    title: 'HireFlow AI Recruitment Agent',
     subtitle: "Multi-Stage AI Recruitment Agent",
     description:
       "Built an autonomous five-stage hiring workflow integrating Google Calendar and Gmail automation, with a React dashboard and FastAPI backend orchestrated with LangGraph for seamless recruitment.",
@@ -95,7 +95,7 @@ export const education = [
     school: "AVS College of Arts and Science",
     detail: "Bachelor's Degree of Computer Science",
     years: "2019 - 2022",
-    link: "www.avscollege.ac.in",
+    link: null,
   },
 ];
 

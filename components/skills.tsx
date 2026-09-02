@@ -13,7 +13,7 @@ export function Skills() {
       <div className="flex flex-wrap gap-2">
         {allSkills.map((skill, index) => (
           <BlurFade key={skill} delay={0.4 + index * 0.05} className="inline-block">
-            <span className="flex h-8 w-fit items-center gap-2 rounded-xl border bg-background px-4 ring-2 ring-border/20">
+            <span className="inline-flex h-7 w-fit items-center gap-2 rounded-lg border border-border bg-muted/50 px-3 py-0.5 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:border-primary/30">
               <SkillIcon name={skill} />
               {skill}
             </span>

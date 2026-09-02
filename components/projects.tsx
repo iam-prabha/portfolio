@@ -3,13 +3,9 @@ import { BlurFade } from "@/components/blur-fade";
 import { GitHubIcon } from "@/components/icons";
 import { projects } from "@/lib/data";
 
-function slugify(title: string) {
-  return title.toLowerCase().replace(/\s+/g, "-");
-}
-
 export function Projects() {
   return (
-    <section id="projects" className="flex min-h-0 flex-col gap-y-8">
+    <section id="projects" className="flex min-h-0 flex-col gap-y-10">
       <BlurFade delay={0.44}>
         <div className="flex items-center w-full">
           <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent" />
@@ -34,56 +30,31 @@ export function Projects() {
         </div>
       </BlurFade>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-200 mx-auto auto-rows-fr w-full">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-4xl mx-auto w-full">
         {projects.map((project, index) => (
           <BlurFade key={project.title} delay={0.48 + index * 0.05}>
-            <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-all duration-200 hover:-translate-y-0.5 hover:ring-2 hover:ring-muted">
-              <div className="flex items-center justify-between gap-3 border-b border-border bg-muted/40 px-4 py-2">
-                <div className="flex items-center gap-1.5">
-                  <span
-                    aria-hidden="true"
-                    className="size-2.5 rounded-full border border-border bg-foreground/20 transition-colors duration-200 group-hover:bg-foreground/40"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="size-2.5 rounded-full border border-border bg-foreground/20 transition-colors duration-200 group-hover:bg-foreground/40"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="size-2.5 rounded-full border border-border bg-foreground/20 transition-colors duration-200 group-hover:bg-foreground/40"
-                  />
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/20 hover:ring-1 hover:ring-primary/10">
+              <div className="flex flex-1 flex-col gap-3 p-6">
+                <div className="flex flex-col gap-1">
+                  <h3 className="flex items-center gap-1 text-2xl font-semibold tracking-tight">
+                    {project.title}
+                    <ArrowUpRight className="size-5 -translate-x-2 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {project.subtitle}
+                  </p>
                 </div>
-                <span className="truncate font-mono text-[11px] text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
-                  ~/projects/{slugify(project.title)}
-                </span>
-              </div>
 
-              <div className="relative flex h-36 flex-col items-center justify-center gap-1 overflow-hidden bg-linear-to-br from-muted to-secondary/40 px-6 text-center">
-                <span
-                  aria-hidden="true"
-                  className="absolute -top-4 -right-2 font-mono text-7xl font-bold tracking-tight text-foreground/5 transition-all duration-200 select-none group-hover:text-foreground/15 group-hover:scale-110"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="flex items-center gap-1 text-2xl font-semibold tracking-tight">
-                  {project.title}
-                  <ArrowUpRight className="size-5 -translate-x-2 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {project.subtitle}
-                </p>
-              </div>
-
-              <div className="flex flex-1 flex-col gap-3 p-5">
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                   {project.description}
                 </p>
-                <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-1">
-                  <div className="flex flex-wrap gap-1">
+
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-border/50">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex h-6 w-fit items-center rounded-md border border-border bg-background px-2 py-0.5 text-[11px] font-medium text-foreground"
+                        className="inline-flex h-7 w-fit items-center rounded-lg border border-border bg-muted/50 px-3 py-0.5 text-[11px] font-medium text-foreground transition-colors hover:bg-muted hover:border-primary/30"
                       >
                         {tech}
                       </span>
@@ -94,24 +65,24 @@ export function Projects() {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                     >
                       <span
                         aria-hidden="true"
                         className="size-1.5 rounded-full bg-emerald-500"
                       />
                       Live
-                      <ArrowUpRight className="size-3 text-muted-foreground transition-colors hover:text-foreground" />
+                      <ArrowUpRight className="size-3.5 text-muted-foreground transition-colors hover:text-foreground" />
                     </a>
                     <a
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
                     >
-                      <GitHubIcon className="size-3" />
+                      <GitHubIcon className="size-3.5" />
                       Source
-                      <ArrowUpRight className="size-3" />
+                      <ArrowUpRight className="size-3.5" />
                     </a>
                   </div>
                 </div>

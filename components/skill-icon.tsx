@@ -19,12 +19,12 @@ const brandIconMap: Record<string, string> = {
   Pinecone: "/devicons/pinecone.svg",
 };
 
-const darkMonochromeIcons = new Set([
-  "Pinecone",
-  "Express",
-  "Vercel",
-  "Next.js",
-]);
+const darkModeFixes: Record<string, string> = {
+  Vercel: "dark:invert",
+  Pinecone: "dark:brightness-200",
+  Express: "dark:brightness-150",
+  FastAPI: "dark:brightness-150",
+};
 
 const fallbackIcons = {
   RAG: Database,
@@ -35,13 +35,14 @@ const fallbackIcons = {
 export function SkillIcon({ name }: { name: string }) {
   const brand = brandIconMap[name];
   if (brand) {
+    const darkFix = darkModeFixes[name] || "";
     return (
       <Image
         src={brand}
         alt={name}
         width={16}
         height={16}
-        className={`size-4 shrink-0 object-contain ${darkMonochromeIcons.has(name) ? "dark:invert" : ""}`}
+        className={`size-4 shrink-0 object-contain ${darkFix}`}
       />
     );
   }
