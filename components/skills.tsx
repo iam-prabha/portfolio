@@ -6,9 +6,9 @@ export function Skills() {
   const allSkills = Object.values(skills).flat();
 
   return (
-    <section id="skills" className="flex min-h-0 flex-col gap-y-4">
+    <section id="skills" className="flex min-h-0 scroll-mt-8 flex-col gap-y-4">
       <BlurFade delay={0.36}>
-        <h2 className="text-xl font-bold">Skills</h2>
+        <h2 className="border-b border-border pb-3 text-2xl font-semibold tracking-tight">Skills</h2>
       </BlurFade>
       <div className="flex flex-wrap gap-2">
         {allSkills.map((skill, index) => (

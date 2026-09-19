@@ -70,9 +70,9 @@ export async function Contributions() {
   const total = contributions.reduce((sum, c) => sum + c.count, 0);
 
   return (
-    <section id="contributions" className="flex min-h-0 flex-col gap-y-4">
+    <section id="contributions" className="flex min-h-0 scroll-mt-8 flex-col gap-y-4">
       <BlurFade delay={0.2}>
-        <h2 className="text-xl font-bold">Contribution</h2>
+        <h2 className="border-b border-border pb-3 text-2xl font-semibold tracking-tight">GitHub activity</h2>
       </BlurFade>
       <BlurFade delay={0.24}>
         <div className="overflow-x-auto pb-1">
@@ -80,7 +80,8 @@ export async function Contributions() {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="grid w-max grid-rows-7 grid-flow-col gap-0.5"
+            className="grid w-max grid-rows-7 grid-flow-col gap-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="View GitHub profile"
           >
             {weeks.flat().map((date) => {
               const dateStr = toISODate(date);

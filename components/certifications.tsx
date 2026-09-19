@@ -4,9 +4,9 @@ import { certifications } from "@/lib/data";
 
 export function Certifications() {
   return (
-    <section id="certifications" className="flex min-h-0 w-full flex-col gap-y-6">
+    <section id="certifications" className="flex min-h-0 w-full scroll-mt-8 flex-col gap-y-6">
       <BlurFade delay={0.52}>
-        <h2 className="text-xl font-bold">Certifications</h2>
+        <h2 className="border-b border-border pb-3 text-2xl font-semibold tracking-tight">Certifications</h2>
       </BlurFade>
 
       <div className="flex w-full flex-col gap-8">

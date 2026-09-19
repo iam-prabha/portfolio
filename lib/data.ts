@@ -14,7 +14,7 @@ export const personalInfo = {
 };
 
 export const aboutText =
-  "I build and architect AI intelligent systems that solve real problems. From agentic AI applications and RAG pipelines to full stack web products, I love taking an idea and turning it into a production-ready system that people actually use.";
+  "I build AI products and full-stack systems that turn messy, real-world problems into clear workflows. My work spans agentic applications, retrieval systems, and web products designed to be useful in production—not just impressive in a demo.";
 
 export const skills = {
   "Languages & AI": [
@@ -43,6 +43,7 @@ export const projects = [
   {
     title: "Diary",
     subtitle: "Your Private Journal app",
+    impact: "A calmer place to write, organize, and keep memories private.",
     description:
       "Developed a full-stack journaling application with rich text editing via TipTap and cloud media uploads.",
     dates: "Project",
@@ -55,6 +56,7 @@ export const projects = [
   {
     title: 'HireFlow AI Recruitment Agent',
     subtitle: "Multi-Stage AI Recruitment Agent",
+    impact: "Five-stage recruitment workflow with calendar and email automation.",
     description:
       "Built an autonomous five-stage hiring workflow integrating Google Calendar and Gmail automation, with a React dashboard and FastAPI backend orchestrated with LangGraph for seamless recruitment.",
     dates: "Project",
@@ -67,6 +69,7 @@ export const projects = [
   {
     title: "AI-Powered Research Agent",
     subtitle: "Citation-backed reports in minutes",
+    impact: "Turns a research question into a cited report in under 2 minutes.",
     description:
       "Built an assistant for topic decomposition, web search, and citation-backed report generation in under 2 minutes using LangChain and the Gemini API.",
     dates: "Project",
@@ -79,6 +82,7 @@ export const projects = [
   {
     title: "AI Semantic Search Engine",
     subtitle: "Vector search over documents",
+    impact: "40% better retrieval than keyword search across project documents.",
     description:
       "Implemented semantic search across PDF and Markdown documents, improving retrieval by 40% compared to keyword search using LangChain and Pinecone.",
     dates: "Project",

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { GridPattern } from "@/components/grid-pattern";
 import { BottomNav } from "@/components/bottom-nav";
 
@@ -27,24 +26,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen bg-background font-sans antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <GridPattern className="h-[100px] z-0" />
-          <div className="relative z-10 mx-auto max-w-2xl px-6 py-12 pb-24 sm:py-24">
-            <main className="relative flex min-h-dvh flex-col gap-14">
-              {children}
-            </main>
-          </div>
-          <BottomNav />
-        </ThemeProvider>
+        <GridPattern className="h-[100px] z-0" />
+        <div className="relative z-10 mx-auto max-w-2xl px-6 py-12 pb-24 sm:py-24">
+          <main className="relative flex min-h-dvh flex-col gap-14">
+            {children}
+          </main>
+        </div>
+        <BottomNav />
       </body>
     </html>
   );

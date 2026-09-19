@@ -4,9 +4,9 @@ import { education } from "@/lib/data";
 
 export function Education() {
   return (
-    <section id="education" className="flex min-h-0 flex-col gap-y-6">
+    <section id="education" className="flex min-h-0 scroll-mt-8 flex-col gap-y-6">
       <BlurFade delay={0.28}>
-        <h2 className="text-xl font-bold">Education</h2>
+        <h2 className="border-b border-border pb-3 text-2xl font-semibold tracking-tight">Education</h2>
       </BlurFade>
       <div className="flex flex-col gap-8">
         {education.map((item, index) => (
