@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Velprabhakaran Basker",
   initials: "VB",
   pfp: "/pfp.jpg",
-  headlines: ["AI Engineer", "Full Stack Engineer"],
+  headlines: ["AI Engineer", "AI Agentic Engineer", "AI Application Developer"],
   location: "Salem, Tamil Nadu",
   phone: "+91 63807 03724",
   email: "vel.prabhakaran.ds@gmail.com",
