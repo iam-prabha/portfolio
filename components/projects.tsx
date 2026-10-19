@@ -30,9 +30,29 @@ export function Projects() {
               <div className="flex flex-1 flex-col gap-3 p-6">
                 <div className="flex flex-col gap-1">
                   <h3 className="flex items-start gap-1 text-xl font-semibold tracking-tight">
-                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} live demo`} className="transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm">
-                      {project.title}
-                    </a>
+                    {project.links.demo ? (
+                      <a
+                        href={project.links.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title} live demo`}
+                        className="transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                      >
+                        {project.title}
+                      </a>
+                    ) : project.links.github ? (
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${project.title} on GitHub`}
+                        className="transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                      >
+                        {project.title}
+                      </a>
+                    ) : (
+                      <span>{project.title}</span>
+                    )}
                     <ArrowUpRight className="size-5 -translate-x-2 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
                   </h3>
                   <p className="text-sm text-muted-foreground">
@@ -59,19 +79,21 @@ export function Projects() {
                     ))}
                   </div>
                   <div className="flex items-center gap-3">
-                    <a
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="size-1.5 rounded-full bg-emerald-500"
-                      />
-                      Live demo
-                      <ArrowUpRight className="size-3.5 text-muted-foreground transition-colors hover:text-foreground" />
-                    </a>
+                    {project.links.demo && (
+                      <a
+                        href={project.links.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="size-1.5 rounded-full bg-emerald-500"
+                        />
+                        Live demo
+                        <ArrowUpRight className="size-3.5 text-muted-foreground transition-colors hover:text-foreground" />
+                      </a>
+                    )}
                     <a
                       href={project.links.github}
                       target="_blank"

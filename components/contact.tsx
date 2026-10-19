@@ -15,7 +15,7 @@ export function Contact() {
             Get in Touch
           </h2>
           <p className="mx-auto max-w-lg text-muted-foreground text-balance">
-            Want to chat about AI systems, full stack engineering, or
+            Want to chat about AI products, systems engineering, or
             collaboration? Just shoot me a{" "}
             <a
               href={personalInfo.xFollow}

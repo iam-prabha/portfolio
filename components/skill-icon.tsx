@@ -4,10 +4,12 @@ import { Database, Bot, ScanSearch } from "lucide-react";
 const brandIconMap: Record<string, string> = {
   TypeScript: "/devicons/typescript.svg",
   Python: "/devicons/python.svg",
+  Rust: "/devicons/rust.svg",
   React: "/devicons/react.svg",
   "Next.js": "/devicons/nextjs.svg",
   FastAPI: "/devicons/fastapi.svg",
   Express: "/devicons/express.svg",
+  PostgreSQL: "/devicons/postgresql.svg",
   Docker: "/devicons/docker.svg",
   Git: "/devicons/git.svg",
   Vercel: "/devicons/vercel.svg",
@@ -23,7 +25,6 @@ const darkModeFixes: Record<string, string> = {
   Vercel: "dark:invert",
   Pinecone: "dark:brightness-200",
   Express: "dark:brightness-150",
-  FastAPI: "dark:brightness-150",
 };
 
 const fallbackIcons = {

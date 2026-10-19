@@ -10,10 +10,12 @@ export function Hero() {
       <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div className="order-2 flex max-w-xl flex-col gap-6 md:order-1">
           <BlurFade delay={0.04} yOffset={8}>
-            <p className="mb-4 flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-emerald-700">
-              <span aria-hidden="true" className="size-1.5 rounded-full bg-emerald-500" />
-              AI systems · Full-stack engineering
-            </p>
+            <div className="mb-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-mono text-xs font-medium text-emerald-800">
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                AI Products · Systems &amp; Execution
+              </span>
+            </div>
             <h1 className="max-w-2xl text-4xl font-semibold leading-[1.04] tracking-[-0.06em] sm:text-6xl">
               I build AI systems people can actually use.
             </h1>
@@ -36,7 +38,7 @@ export function Hero() {
           <BlurFade delay={0.22} yOffset={8}>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1.5"><MapPin className="size-3.5" />{personalInfo.location}</span>
-              <span className="inline-flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-emerald-500" />Open to AI engineering &amp; full-stack opportunities</span>
+              <span className="inline-flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-emerald-500" />Open to AI product &amp; builder roles</span>
             </div>
           </BlurFade>
         </div>

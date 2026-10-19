@@ -38,12 +38,9 @@ export function Education() {
                   <GraduationCap className="size-5 text-muted-foreground" />
                 </span>
                 <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-semibold leading-none">
-                      {item.school}
-                    </h3>
-                    <ArrowUpRight className="h-3.5 w-3.5 -translate-x-2 text-muted-foreground opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
-                  </div>
+                  <h3 className="font-semibold leading-none">
+                    {item.school}
+                  </h3>
                   <p className="text-sm text-muted-foreground">{item.detail}</p>
                   <p className="text-xs text-muted-foreground">{item.years}</p>
                 </div>

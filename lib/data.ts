@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Velprabhakaran Basker",
   initials: "VB",
   pfp: "/pfp.jpg",
-  headlines: ["AI Engineer", "AI Agentic Engineer", "AI Application Developer"],
+  headlines: ["AI Product Manager", "Technical Entrepreneur", "Builder & Operator"],
   location: "Salem, Tamil Nadu",
   phone: "+91 63807 03724",
   email: "vel.prabhakaran.ds@gmail.com",
@@ -14,12 +14,13 @@ export const personalInfo = {
 };
 
 export const aboutText =
-  "I build AI products and full-stack systems that turn messy, real-world problems into clear workflows. My work spans agentic applications, retrieval systems, and web products designed to be useful in production—not just impressive in a demo.";
+  "I spot operational bottlenecks and build AI-powered systems that eliminate them. I own the work end-to-end — scoping the problem, shipping the solution, and keeping it running in production. My focus is turning messy, real-world workflows into tools people actually use.";
 
 export const skills = {
   "Languages & AI": [
     "TypeScript",
     "Python",
+    "Rust",
     "SQL",
     "LangGraph",
     "LangChain",
@@ -32,6 +33,7 @@ export const skills = {
     "Next.js",
     "FastAPI",
     "Express",
+    "PostgreSQL",
     "Pinecone",
     "Docker",
     "Git",
@@ -41,25 +43,23 @@ export const skills = {
 
 export const projects = [
   {
-    title: "Diary",
-    subtitle: "Your Private Journal app",
-    impact: "A calmer place to write, organize, and keep memories private.",
+    title: "RFP Orchestrator",
+    subtitle: "Enterprise proposal responses, automated",
+    impact: "Compresses multi-day RFP response work into a single review session.",
     description:
-      "Developed a full-stack journaling application with rich text editing via TipTap and cloud media uploads.",
-    dates: "Project",
-    tech: ["TypeScript", "React", "Express", "Prisma"],
+      "Built a 7-stage multi-agent pipeline that ingests enterprise RFPs (PDF/DOCX/XLSX), extracts every question, drafts grounded answers with source citations and confidence scores, then exports reviewer-approved responses as Word and Excel documents — ready to send.",
+    tech: ["TypeScript", "Next.js", "NVIDIA NIM", "Supabase", "pgvector"],
     links: {
-      github: "https://github.com/iam-prabha/diary",
-      demo: "https://diary-client-two.vercel.app",
+      github: "https://github.com/iam-prabha/rfp-orchestrator",
+      demo: "https://rfp-orchestrator.vercel.app/",
     },
   },
   {
-    title: 'HireFlow AI Recruitment Agent',
+    title: "HireFlow AI Recruitment Agent",
     subtitle: "Multi-Stage AI Recruitment Agent",
     impact: "Five-stage recruitment workflow with calendar and email automation.",
     description:
       "Built an autonomous five-stage hiring workflow integrating Google Calendar and Gmail automation, with a React dashboard and FastAPI backend orchestrated with LangGraph for seamless recruitment.",
-    dates: "Project",
     tech: ["TypeScript", "FastAPI", "LangGraph", "Supabase"],
     links: {
       github: "https://github.com/iam-prabha/hireflow-ai",
@@ -67,29 +67,26 @@ export const projects = [
     },
   },
   {
-    title: "AI-Powered Research Agent",
-    subtitle: "Citation-backed reports in minutes",
-    impact: "Turns a research question into a cited report in under 2 minutes.",
+    title: "Querybase",
+    subtitle: "Chat with any documentation site",
+    impact: "Turns any docs site into a queryable knowledge base in under 5 commands.",
     description:
-      "Built an assistant for topic decomposition, web search, and citation-backed report generation in under 2 minutes using LangChain and the Gemini API.",
-    dates: "Project",
-    tech: ["Python", "LangChain", "Gemini API"],
+      "Built a CLI tool that scrapes any documentation website, chunks and embeds content, then lets teams query it in plain English with cited answers — users bring their own API keys, with multi-user auth, rate limiting, and key rotation built in.",
+    tech: ["TypeScript", "Node.js", "Qdrant", "NVIDIA NIM", "Docker"],
     links: {
-      github: "https://github.com/iam-prabha/research-agent",
-      demo: "https://research-agent-1-dcsj.onrender.com/",
+      github: "https://github.com/iam-prabha/querybase-cli",
     },
   },
   {
-    title: "AI Semantic Search Engine",
-    subtitle: "Vector search over documents",
-    impact: "40% better retrieval than keyword search across project documents.",
+    title: "Diary",
+    subtitle: "Your Private Journal app",
+    impact: "A calmer place to write, organize, and keep memories private.",
     description:
-      "Implemented semantic search across PDF and Markdown documents, improving retrieval by 40% compared to keyword search using LangChain and Pinecone.",
-    dates: "Project",
-    tech: ["Python", "LangChain", "Pinecone", "Streamlit"],
+      "Developed a full-stack journaling application with rich text editing via TipTap and cloud media uploads.",
+    tech: ["TypeScript", "React", "Express", "Prisma"],
     links: {
-      github: "https://github.com/iam-prabha/ai-semantic-search",
-      demo: "https://semantic-search.streamlit.app",
+      github: "https://github.com/iam-prabha/diary",
+      demo: "https://diary-client-two.vercel.app",
     },
   },
 ];
