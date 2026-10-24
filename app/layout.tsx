@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Velprabhakaran Basker | AI Product Manager & Builder",
+  title: "Velprabhakaran Basker | AI Product Engineer & Builder",
   description:
-    "AI Product Manager and Technical Builder designing and shipping intelligent systems that eliminate operational bottlenecks.",
+    "AI Product Engineer building agentic systems, production RAG pipelines, and full-stack software that eliminate operational bottlenecks.",
 };
 
 export default function RootLayout({

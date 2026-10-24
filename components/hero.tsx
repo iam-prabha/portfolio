@@ -22,7 +22,7 @@ export function Hero() {
           </BlurFade>
           <BlurFade delay={0.1} yOffset={8}>
             <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I&apos;m {personalInfo.name}, an <span className="text-foreground"><Typewriter words={personalInfo.headlines} /></span> turning complex ideas into production-ready products.
+              I&apos;m {personalInfo.name} — <span className="text-foreground font-medium"><Typewriter words={personalInfo.headlines} /></span> turning complex ideas into production-ready software.
             </p>
           </BlurFade>
           <BlurFade delay={0.16} yOffset={8}>
@@ -38,7 +38,7 @@ export function Hero() {
           <BlurFade delay={0.22} yOffset={8}>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1.5"><MapPin className="size-3.5" />{personalInfo.location}</span>
-              <span className="inline-flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-emerald-500" />Open to AI product &amp; builder roles</span>
+              <span className="inline-flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-emerald-500" />Open to AI product engineering &amp; builder roles</span>
             </div>
           </BlurFade>
         </div>
